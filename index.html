@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./src/assets/dina2.png" />
+    <style type="text/css" media="screen">
+		html, body {
+      cursor: url('./src/assets/dina2.png'), auto;
+			padding: 0;
+			margin: 0;
+			line-height: 1.2;
+			font-family: 'Simple Console', monospace;
+      color: #00FF41;
+		}
+		.pre1 {
+			position: absolute;
+			margin:0;
+			padding:0;
+			left:0;
+			top:0;
+			width:100vw;
+			height:100vh;
+			font-family: inherit;
+		}
+		.pre2 {
+      display: none;
+			position: absolute;
+			margin:0;
+			padding:0;
+			left:0%;
+			top:0%;
+			width:100vw;
+			height:100vh;
+			font-family: inherit;
+		}
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encode:Space</title>
+  </head>
+  <body>
+    <pre class="pre1" style="user-select: none;" data-selection-enabled="false"></pre>
+    <pre class="pre2" style="user-select: none;" data-selection-enabled="false"></pre>
+    <div id="root"></div>
+    <script type="module" src="/src/bg.jsx"></script>
+    <script type="module" src="/src/bg1.jsx"></script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

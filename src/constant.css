@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,200&display=swap');
+@font-face {
+    font-family: 'Pilat-Book';
+    src: url('/public/PilatExtended-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pilat-Demi';
+    src: url('/public/PilatExtended-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+.fira-sans-extralight {
+    font-family: "Fira Sans", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .fira-sans-regular {
+    font-family: "Fira Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fira-sans-extralight-italic {
+    font-family: "Fira Sans", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+:root {
+    background-color: #000000;
+    --black : #000000;
+    --raisin-black : #272729;
+    --erin : #00ff41;
+    --timberwolf : #e5e1da;
+    --shadow : 0px 0px 0px 1px #0E3F7E08,
+    0px 1px 1px -0.5px #2A334508,
+    0px 3px 3px -1.5px #2a332a,
+    0px 6px 6px -3px #2A334508,
+    0px 12px 12px -6px #0E3F7E08,
+    0px 24px 24px -12px #0E3F7E10;
+}

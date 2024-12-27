@@ -1,0 +1,43 @@
+@import './constant.css';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,200&display=swap');
+@font-face {
+    font-family: 'Pilat-Book';
+    src: url('/public/PilatExtended-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pilat-Demi';
+    src: url('/public/PilatExtended-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+.fira-sans-extralight {
+    font-family: "Fira Sans", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .fira-sans-regular {
+    font-family: "Fira Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fira-sans-extralight-italic {
+    font-family: "Fira Sans", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+html,body{
+  margin: 0;
+  padding: 0;
+}
+.App {
+  display: flex;
+  place-content: center;
+  width: 100vw;
+  background: var(--black);
+  font-family: "Pilat-Demi";
+}

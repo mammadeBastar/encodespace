@@ -1,0 +1,7 @@
+.bg {
+    position: absolute;
+    width: 100dvw;
+    height: 142dvw;
+    background-image: url('assets/73point3.jpg');
+    background-size: 100%;
+}
