@@ -15,9 +15,9 @@ const chars = "█▓▒░ ".split('')
 const encode = "ENCODE:".split('')
 const space = ":SPACE".split('')
 const soon = "YOUGUESS".split('')
-// export function boot(context, buffer, data) {
-// 	document.body.style.cursor = 'crosshair';
-// }
+export function boot(context, buffer, data) {
+	document.body.style.cursor = 'crosshair';
+}
 export function main(coord, context, cursor, buffer){
 	const t = context.time * 0.002
 	const x = coord.x
@@ -38,9 +38,7 @@ export function main(coord, context, cursor, buffer){
 		: 0;
 	if(i === 0){
 		if( ((((mx - x)*(mx - x)) < 40 && (my - y)*(my - y) < 20))) {
-			return {
-				char :soon[x%8]
-			}
+			return  soon[x%8]
 		}
 		const r = Math.random()
 		if(r > 0.3){

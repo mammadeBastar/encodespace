@@ -1,0 +1,8 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    top: 98dvh;
+    width: 100dvw;
+    height: 2dvh;
+    display: none;
+}
