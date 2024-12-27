@@ -5,22 +5,25 @@
 */
 
 import { sdSegment } from './modules/sdf.jsx'
-import { copy, length, vec2, add, sub, divN, mulN } from './modules/vec2.jsx'
+import { copy, length, vec2, add, sub, divN, mulN, abs } from './modules/vec2.jsx'
 import * as v3 from './modules/vec3.jsx'
 import { smoothstep } from './modules/num.jsx'
 
 
 
 const chars = "█▓▒░ ".split('')
-const encode = "Encode:".split('')
-const space = ":Space".split('')
-export function boot(context, buffer, data) {
-	document.body.style.cursor = 'crosshair';
-}
+const encode = "ENCODE:".split('')
+const space = ":SPACE".split('')
+const soon = "YOUGUESS".split('')
+// export function boot(context, buffer, data) {
+// 	document.body.style.cursor = 'crosshair';
+// }
 export function main(coord, context, cursor, buffer){
 	const t = context.time * 0.002
 	const x = coord.x
 	const y = coord.y
+	const mx = cursor.x // column of the cell hovered
+	const my = cursor.y
 	const index = coord.index
 	const o = Math.sin(y * Math.sin(t) * 0.2 + x * 0.04 + t) * 20
 	// const i = Math.round(Math.abs(x + y + o)) % chars.length
@@ -34,6 +37,11 @@ export function main(coord, context, cursor, buffer){
 		: x > v0 ? 1
 		: 0;
 	if(i === 0){
+		if( ((((mx - x)*(mx - x)) < 40 && (my - y)*(my - y) < 20))) {
+			return {
+				char :soon[x%8]
+			}
+		}
 		const r = Math.random()
 		if(r > 0.3){
 			return encode[x % 7]
@@ -44,7 +52,6 @@ export function main(coord, context, cursor, buffer){
 		else{
 			return space[x % 6]
 		}
-
 	}
 	else{
 		return chars[i];
