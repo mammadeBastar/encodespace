@@ -16,7 +16,7 @@ const encode = "ENCODE:".split('')
 const space = ":SPACE".split('')
 const soon = "YOUGUESS".split('')
 export function boot(context, buffer, data) {
-	document.body.style.cursor = 'crosshair';
+	document.body.style.cursor = 'none';
 }
 export function main(coord, context, cursor, buffer){
 	const t = context.time * 0.002
@@ -36,23 +36,47 @@ export function main(coord, context, cursor, buffer){
 		: x > v1 ? 2
 		: x > v0 ? 1
 		: 0;
-	if(i === 0){
-		if( ((((mx - x)*(mx - x)) < 40 && (my - y)*(my - y) < 20))) {
-			return  soon[x%8]
+	const dis = (Math.pow((mx - x), 2) / 4 + Math.pow((my - y), 2))
+	const opac = Math.floor((1 - dis / 20) * 255)
+	const deci = opac.toString(16)
+	if(i === 4 && ( ((dis < 10))) ){
+		return  {
+			char : soon[x%8],
+			color : "#00ff41" + deci,
+		}
+	}
+	else if(i === 0){
+		if( dis < 20){
+			const opac2 = Math.floor((.2 + (dis / 20)) * 255)
+			const deci2 = opac2.toString(16)
+			return  {
+				char : soon[7 -x%8],
+				color : "#00ff41" + deci2,
+			}
 		}
 		const r = Math.random()
 		if(r > 0.3){
-			return encode[x % 7]
+			return {
+				char : encode[x % 7],
+				color : "#00ff41"
+			}
 		}
 		else if( r % 0.1 === 0){
 			return ' '
 		}
 		else{
-			return space[x % 6]
+			return {
+				char : space[x % 6],
+				color : "#00ff41"
+			}
 		}
 	}
+	
 	else{
-		return chars[i];
+		return {
+			char : chars[i],
+			color : "#00ff41"
+		}
 	}
 }
 
