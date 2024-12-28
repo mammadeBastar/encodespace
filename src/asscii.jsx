@@ -20,6 +20,8 @@ export function boot(context, buffer, data) {
 }
 export function main(coord, context, cursor, buffer){
 	const t = context.time * 0.002
+	const f = context.frame
+	const j =Math.floor(f / 3)
 	const x = coord.x
 	const y = coord.y
 	const mx = cursor.x // column of the cell hovered
@@ -41,7 +43,7 @@ export function main(coord, context, cursor, buffer){
 	const deci = opac.toString(16)
 	if(i === 4 && ( ((dis < 10))) ){
 		return  {
-			char : soon[x%8],
+			char : soon[(Math.floor(my - y)*5 + j + x)%8],
 			color : "#00ff41" + deci,
 		}
 	}
@@ -50,7 +52,7 @@ export function main(coord, context, cursor, buffer){
 			const opac2 = Math.floor((.2 + (dis / 20)) * 255)
 			const deci2 = opac2.toString(16)
 			return  {
-				char : soon[7 -x%8],
+				char : soon[((x  + Math.floor(my - y) * 5 + j)%8)],
 				color : "#00ff41" + deci2,
 			}
 		}
